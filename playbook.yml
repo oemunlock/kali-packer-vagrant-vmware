@@ -1,0 +1,7 @@
+---
+- name: server
+  hosts: default
+  become: yes
+  tasks:
+    - name: update apt cache
+      apt: update_cache=yes
