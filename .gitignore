@@ -1,1 +1,4 @@
 .vagrant
+packer_cache
+.idea
+output-vmware-iso
