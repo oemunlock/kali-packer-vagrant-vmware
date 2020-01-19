@@ -2,14 +2,18 @@
     "provisioners": [
         {
             "type": "shell",
-            "execute_command": "sudo -S sh",
+            "pause_before": "10s",
+            "execute_command": "echo 'vagrant'|sudo -S bash '{{.Path}}'",
             "scripts": [
                 "./scripts/setup.sh"
             ]
-        },
+        }
+    ],
+    "post-processors": [
         {
-            "type": "ansible-local",
-            "playbook_file": "./vagrant-setup.yml"
+            "type": "vagrant",
+            "output": "Kali.box",
+            "keep_input_artifact": true
         }
     ],
     "builders": [
@@ -52,9 +56,9 @@
             "iso_checksum_type": "sha256",
             "iso_checksum": "bad0d602a531b872575e23cc025b45fee475523b51378a035928b733ca395ac5",
             "output_directory": "output-vmware-iso",
-            "ssh_username": "root",
-            "ssh_password": "toor",
+            "ssh_password": "vagrant",
             "ssh_port": 22,
+            "ssh_username": "vagrant",
             "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
             "memory": 6000
         }

@@ -20,7 +20,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.winrm -- for windows
   
   config.vm.network :forwarded_port, guest: 80, host: 8800, auto_correct: true 
-  
+  config.vmware_fusion.gui = true
   # config.vm.network "private_network", ip: "192.168.33.10"
 
   # config.vm.synced_folder "../data", "/vagrant_data", type: "rsync"
