@@ -8,7 +8,6 @@ which=news
 EOL
 
 # setup sudo
-adduser vagrant
 groupadd -r admin
 usermod -a -G admin vagrant
 cp /etc/sudoers /etc/sudoers.orig
