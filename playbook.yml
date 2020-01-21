@@ -5,3 +5,5 @@
   tasks:
     - name: update apt cache
       apt: update_cache=yes
+    - name: install gome
+      apt: install kali-desktop-gnome
