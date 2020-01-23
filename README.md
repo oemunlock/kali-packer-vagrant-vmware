@@ -1,6 +1,14 @@
 # kali-packer-vagrant-vmware
 
-uses `kali-2019.4/kali-linux-2019.4-gnome-amd64` image of kali linux & `scripts/setup.sh` & `preseed.cfg` for configuration.
+## Setup and Config
+
+uses `kali-2019.4/kali-linux-2019.4-gnome-amd64` image of kali linux.
+
+`packer` uses `kali.json` and `preseed.cfg` to configure the installation process.
+
+`vagrant` uses `ansible` and `scripts/setup.sh` to configure the VM after the packer build.
+
+## Use
 
 run `./packer.sh` to build a `Kali.box` file to use with `vagrant` and `vmware fusion`. 
 
