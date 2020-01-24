@@ -3,9 +3,11 @@
   hosts: default
   become: true
   vars:
-    packages: ["lsscsi"]
+    packages: ["lsscsi", "mingw-w64"]
   tasks:
     - name: update apt cache
       apt: update_cache=yes
     - name: Install Package
       apt: name='{{ packages }}' state=latest
+    - name: download hyperion
+      shell: wget https://github.com/nullsecuritynet/tools/raw/master/binary/hyperion/release/Hyperion-1.2.zip ; unzip Hyperion-1.2.zip ; cd Hyperion-2.2 ; i686-w64-mingw32-c++ Hyperion-1.2/Src/Crypter/*.cpp -o hyperion.exe
