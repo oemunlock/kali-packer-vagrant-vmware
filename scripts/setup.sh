@@ -41,12 +41,12 @@ curl -Lo /home/vagrant/.ssh/authorized_keys \
 chmod 0600 /home/vagrant/.ssh/authorized_keys
 chown -R vagrant:vagrant /home/vagrant/.ssh
 
-sudo DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confnew" dist-upgrade -yq
-sudo DEBIAN_FRONTEND=noninteractive apt-get -y -qq update
-sudo DEBIAN_FRONTEND=noninteractive apt-get -y -qq upgrade
-sudo DEBIAN_FRONTEND=noninteractive apt-get -y -qq install python-pip ansible open-vm-tools open-vm-tools-desktop fuse nfs-common linux-headers-$(uname -r)
-sudo DEBIAN_FRONTEND=noninteractive apt-get -y autoclean
-sudo DEBIAN_FRONTEND=noninteractive apt-get -y clean
+sudo apt-get -o Dpkg::Options::="--force-confnew" dist-upgrade -yq
+sudo apt-get -y -qq update
+sudo apt-get -y -qq upgrade
+sudo apt-get -y -qq install python-pip ansible open-vm-tools open-vm-tools-desktop fuse nfs-common linux-headers-$(uname -r)
+sudo apt-get -y autoclean
+sudo apt-get -y clean
 dd if=/dev/zero of=/EMPTY bs=1M
 rm -f /EMPTY
 sync
