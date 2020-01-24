@@ -1,13 +1,15 @@
 ---
-- name: server
+- name: setup_server
   hosts: default
   become: true
   vars:
-    packages: ["lsscsi", "mingw-w64"]
+    packages: ["lsscsi", "mingw-w64", "veil"]
   tasks:
     - name: update apt cache
       apt: update_cache=yes
-    - name: Install Package
+
+    - name: install packages
       apt: name='{{ packages }}' state=latest
-    - name: download hyperion
-      shell: wget https://github.com/nullsecuritynet/tools/raw/master/binary/hyperion/release/Hyperion-1.2.zip ; unzip Hyperion-1.2.zip ; cd Hyperion-2.2 ; i686-w64-mingw32-c++ Hyperion-1.2/Src/Crypter/*.cpp -o hyperion.exe
+
+    - name: setup veil
+      shell: /usr/share/veil/config/setup.sh --force --silent
