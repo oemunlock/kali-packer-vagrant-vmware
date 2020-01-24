@@ -2,6 +2,8 @@
 
 ## Setup and Config
 
+assumes a local environment which includes `vmware fusion pro` 11 and the [vagrant vmware provider plugin](https://www.vagrantup.com/vmware#buy-now).
+
 uses `kali-2019.4/kali-linux-2019.4-gnome-amd64` image of kali linux.
 
 `packer` uses `kali.json` and `preseed.cfg` to configure the installation process & `scripts/setup.sh` for post-intallation configuration.
