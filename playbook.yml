@@ -13,3 +13,9 @@
 
     - name: setup veil
       shell: /usr/share/veil/config/setup.sh --force --silent
+
+    - name: copy etter.conf
+      copy:
+        src: ./etter.conf
+        dst: /etc/ettercap/etter.conf
+        owner: root
