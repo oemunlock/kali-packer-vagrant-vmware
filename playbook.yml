@@ -1,9 +1,11 @@
 ---
 - name: server
   hosts: default
-  become: yes
+  become: true
+  vars:
+    packages: ["lsscsi"]
   tasks:
     - name: update apt cache
       apt: update_cache=yes
-    - name: install deps
-      apt: install lsscsi
+    - name: Install Package
+      apt: name='{{ packages }}' state=latest

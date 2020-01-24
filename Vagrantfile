@@ -10,7 +10,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.box = "./Kali.box"
- 
+  config.vm.provider "vmware_desktop" do |v|
+    v.gui = true
+  end
   #vm.provider "vmware_fusion" do |vmware| 
   #  vmware.vmx["memsize"] = "2048" 
   #  vmware.vmx["numvcpus"] = "2"
