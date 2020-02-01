@@ -41,7 +41,7 @@
                 " netcfg/get_hostname=kali<wait>",
                 " grub-installer/bootdev=/dev/sda<wait>",
                 " noapic<wait>",
-                " preseed/url=https://raw.githubusercontent.com/mtphil/kali-packer-vagrant-vmware/master/preseed.cfg",
+                " preseed/url=https://raw.githubusercontent.com/oemunlock/kali-packer-vagrant-vmware/master/preseed.cfg",
                 " -- <wait>",
                 "<enter><wait>"
             ],
